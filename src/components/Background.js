@@ -11,7 +11,7 @@ const slide = keyframes`
 
 const Background = styled.div`
   animation: ${slide} 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(60deg, #6c3 50%, #09f 50%);
+  background-image: linear-gradient(65deg, tomato 50%, aquamarine 50%);
   bottom: 0;
   left: -50%;
   opacity: 0.5;

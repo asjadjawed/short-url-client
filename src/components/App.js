@@ -21,8 +21,8 @@ function App() {
       <Background3 />
       <Content>
         <header>
-          <h1>Short Urls</h1>
-          <h3>Shorten your links</h3>
+          <h2>&#128476; Short Urls</h2>
+          <h5>Shorten your links</h5>
         </header>
         <main>
           <ShortenUrl></ShortenUrl>
