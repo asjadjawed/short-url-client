@@ -1,9 +1,29 @@
 import { useState } from "react";
+import styled from "styled-components";
 import axios from "axios";
+
+const InputUrl = styled.input`
+  padding: 1.2rem;
+  text-align: center;
+  border: 2px solid white;
+`;
+
+const ShortenButton = styled.button`
+  padding: 1.2rem;
+  text-align: center;
+  border: 2px solid white;
+`;
+
+const UrlLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 5px;
+  cursor: pointer;
+`;
 
 const ShortenUrl = () => {
   const [longUrl, setLongUrl] = useState("");
-  const [normalizedLongUrl, setNormalizedLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [status, setStatus] = useState("");
 
@@ -14,35 +34,29 @@ const ShortenUrl = () => {
       .then(({ data }) => {
         setStatus("Link Shortened!");
         setShortUrl("https://short--urls.herokuapp.com/" + data.slug);
-        setNormalizedLongUrl(data.longUrl);
       })
       .catch((error) => setStatus(error.response.data.message));
   };
 
   return (
     <div>
-      <h4 className="status">{status}</h4>
+      <h4 className="status">
+        <em>{status}</em>
+      </h4>
       <form onSubmit={handleSubmit}>
-        <input
+        <InputUrl
           placeholder="input link here"
           value={longUrl}
           onChange={(e) => setLongUrl(e.target.value)}
-        ></input>
-        <button type="submit">Shorten</button>
+        ></InputUrl>
+
+        <ShortenButton type="submit">Shorten</ShortenButton>
       </form>
       <div className="results">
         <p>
-          Short URL:{" "}
-          <a href={shortUrl} target="_blank" rel="noreferrer">
-            {shortUrl}
-          </a>
-        </p>
-        <p>
-          Your URL:{" "}
-          <a href={normalizedLongUrl} target="_blank" rel="noreferrer">
-            {" "}
-            {normalizedLongUrl}
-          </a>
+          <UrlLink href={shortUrl} target="_blank" rel="noreferrer">
+            {shortUrl ? "🌐 " + shortUrl : null}
+          </UrlLink>
         </p>
       </div>
     </div>

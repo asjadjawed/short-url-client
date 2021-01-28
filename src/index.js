@@ -3,9 +3,8 @@ import ReactDOM from "react-dom";
 
 import App from "./components/App";
 
-import "sanitize.css";
-import "sanitize.css/forms.css";
-import "sanitize.css/typography.css";
+import "normalize.css";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
