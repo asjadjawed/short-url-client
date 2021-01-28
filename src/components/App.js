@@ -22,7 +22,7 @@ function App() {
       <Content>
         <header>
           <h2>&#128476; Short Urls</h2>
-          <h5>Shorten your links</h5>
+          <h4>Shorten your links...</h4>
         </header>
         <main>
           <ShortenUrl></ShortenUrl>
