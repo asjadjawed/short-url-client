@@ -4,22 +4,32 @@ import axios from "axios";
 
 const InputUrl = styled.input`
   padding: 1.2rem;
+  margin: 5px 0;
   text-align: center;
   border: 2px solid white;
 `;
 
 const ShortenButton = styled.button`
   padding: 1.2rem;
+  margin: 5px 0;
   text-align: center;
   border: 2px solid white;
 `;
 
 const UrlLink = styled.a`
   color: #fff;
+  text-align: left;
   text-decoration: none;
   display: inline-block;
   margin: 20px 5px;
   cursor: pointer;
+
+  @media (max-width: 500px) {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const ShortenUrl = () => {
