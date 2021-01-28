@@ -3,9 +3,13 @@ import ShortenUrl from "./ShortenUrl";
 function App() {
   return (
     <div className="App">
-      <h1>URLs -- Short</h1>
-      <h3>Shortening your links since 2021</h3>
-      <ShortenUrl></ShortenUrl>
+      <header>
+        <h1>Short Urls</h1>
+        <h3>Shorten your links</h3>
+      </header>
+      <main>
+        <ShortenUrl></ShortenUrl>
+      </main>
     </div>
   );
 }
